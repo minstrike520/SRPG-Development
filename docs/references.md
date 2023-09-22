@@ -26,4 +26,6 @@
 
 ## Python Poetry
 
+[Python-Poetry Introduction](https://python-poetry.org/docs/)
+
 [再見了 pip！最佳 Python 套件管理器——Poetry 完全入門指南](https://blog.kyomind.tw/python-poetry/#%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E4%BD%BF%E7%94%A8-Poetry)
