@@ -1,0 +1,12 @@
+# venv
+.venv/
+
+# replit
+.replit
+replit.nix
+
+# python
+/__pycache__/
+
+# vscode
+.vscode/
