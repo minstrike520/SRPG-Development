@@ -6,14 +6,20 @@ from utilities.src.tools import is_intstr
 from .player import Player, PlayerManager
 from .stage import Stage
 
-InputSession = Enum("InputSession", [
-    "init",
-    "newc",
-    "start"
-])
+InputSession = Enum("InputSession", ["init", "newc", "start"])
+
+
+class IllegalOperation(Exception):
+
+    def __init__(self, reason: str, di={}):
+        detail = {"reason": reason}
+        detail.update(di)
+        super().__init__(str(detail))
+        self.detail = detail
 
 
 class Console:
+
     def __init__(self):
         self.input_sessions = [InputSession.init]
 
@@ -21,7 +27,12 @@ class Console:
         self.input_sessions = [InputSession.newc, InputSession.start]
         for s in ["client_id", "board_size"]:
             if not is_intstr(cmd[s]):
-                raise Exception
+                raise IllegalOperation(
+                    "argument with inaprropriate input", {
+                        "argument": s,
+                        "input value": cmd[s],
+                        "input should be": "a number"
+                    })
         self.admin: Player = Player(int(cmd["client_id"]))
         self.stage = Stage(int(cmd["board_size"]))
         self.players = PlayerManager()
