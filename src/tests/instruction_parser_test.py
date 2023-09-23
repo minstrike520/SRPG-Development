@@ -1,9 +1,10 @@
-from ..utilities import instruction_parser as parser
+from ..utilities.instruction_parser import parse
 
 ins_lst = [
-    "/main -a 284 -b 284"
+    "/main -a 284 -b 284",
+    "/krkw 194 +&9"
 ]
 
-def main():
+def test():
     for i in ins_lst:
-        print(parser.parse(i))
+        print(parse(i))

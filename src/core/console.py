@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Dict
 
-from utilities.src.tools import is_intstr
+from ..utilities.tools import is_intstr
 
 from .player import Player, PlayerManager
 from .stage import Stage

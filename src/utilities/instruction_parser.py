@@ -1,4 +1,4 @@
-from utilities.src.tools import spaces, combine
+from .tools import spaces, combine
 
 COMMAND_INDICATOR = "/"
 
